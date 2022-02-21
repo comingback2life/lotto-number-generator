@@ -7,10 +7,16 @@ const randomNumber = (max)=>{
 }
 
 const handleOnClick = ()=>{
-  let lottoEntry="";
-  for(let i=0;i<7;i++){
+  let lottoEntry=[]
+  for(let i=0;lottoEntry.length<7;i++){
     const numb=randomNumber(35);
-    lottoEntry+=numb+" ";
+    if(!lottoEntry.includes(numb)){
+      lottoEntry.push(numb);
+    }
+   
   }
+  pwElm.innerText=randomNumber(20);
+  pwElm.style.color="red"
   entryElm.innerText=lottoEntry;
+  entryElm.style.color="red"
 }
